@@ -58,7 +58,6 @@ export function DataTable<TData>({
   data,
   query,
   columns,
-  toolbar,
   isLoading,
   showPagination = true,
   searchInputPlaceholder = "Search...",
@@ -144,7 +143,7 @@ export function DataTable<TData>({
                       <div
                         className={
                           header.column.getCanSort()
-                            ? 'cursor-pointer select-none flex items-center gap-1'
+                            ? 'cursor-pointer select-none flex items-center'
                             : ''
                         }
                         onClick={header.column.getToggleSortingHandler()}
