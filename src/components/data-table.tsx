@@ -20,6 +20,8 @@ import {
   ChevronsLeft,
   ChevronsRight,
   ChevronsUp,
+  ChevronsUpDown,
+  ChevronUp,
   Search,
   SearchX,
 } from "lucide-react";
@@ -161,10 +163,16 @@ export function DataTable<TData>({
                           header.column.columnDef.header,
                           header.getContext(),
                         )}
-                        {{
-                          asc: <ChevronsUp className="size-4" />,
-                          desc: <ChevronsDown className="size-4" />,
-                        }[header.column.getIsSorted() as string] ?? null}
+
+                        {header.column.getCanSort() && !header.column.getIsSorted() && (
+                          <ChevronsUpDown className="ml-1 size-4" />
+                        )}
+                        {header.column.getIsSorted() === 'asc' && (
+                          <ChevronUp className="ml-1 size-4" />
+                        )}
+                        {header.column.getIsSorted() === 'desc' && (
+                          <ChevronDown className="ml-1 size-4" />
+                        )}
                       </div>
                     )}
                   </TableHead>

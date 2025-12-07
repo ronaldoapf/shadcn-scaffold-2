@@ -86,6 +86,7 @@ export function Home() {
     {
       accessorKey: "origin",
       header: "Cidade",
+      enableSorting: false,
       cell: ({ row }) => (
         <span className="text-sm">
           {row.getValue("origin")}
