@@ -97,7 +97,7 @@ export function DataTable<TData>({
     onRowSelectionChange: setRowSelection,
     initialState: {
       pagination: {
-        pageSize: 8,
+        pageSize: 5,
       },
     },
     state: {
@@ -320,7 +320,7 @@ export function DataTable<TData>({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {[5, 8, 10, 20, 50].map((size) => (
+                {[5, 10, 15, 20, 25, 30].map((size) => (
                   <DropdownMenuItem
                     key={size}
                     onClick={() => table.setPageSize(size)}
