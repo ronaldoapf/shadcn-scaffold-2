@@ -130,7 +130,7 @@ export function Layout({
       <div className="h-svh overflow-hidden lg:p-2 w-full">
         <div className="lg:border lg:rounded-md overflow-hidden flex flex-col items-center justify-start bg-container h-full w-full bg-background">
           <Header />
-          <div className="p-4 max-w-7xl mx-auto w-full">
+          <div className="p-4 w-full">
             <Outlet />
           </div>
         </div>
