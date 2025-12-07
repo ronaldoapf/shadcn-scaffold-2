@@ -15,15 +15,11 @@ import {
 import {
   ChevronDown,
   ChevronLeft,
-  ChevronRight,
-  ChevronsDown,
-  ChevronsLeft,
-  ChevronsRight,
-  ChevronsUp,
-  ChevronsUpDown,
+  ChevronRight, ChevronsLeft,
+  ChevronsRight, ChevronsUpDown,
   ChevronUp,
   Search,
-  SearchX,
+  SearchX
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
