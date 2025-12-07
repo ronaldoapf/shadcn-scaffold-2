@@ -7,7 +7,7 @@ export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signin" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route element={<Layout />}>
           <Route path={"/"} element={<Home />} />
         </Route>
