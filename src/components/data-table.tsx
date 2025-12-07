@@ -73,14 +73,13 @@ export function DataTable<TData>({
 
   const debouncedSearchQuery = useDebounce(searchQuery, 500);
 
-  console.log({ isLoading })
   useEffect(() => {
     if (debouncedSearchQuery) {
       setSearchParams({ [query as string]: debouncedSearchQuery });
     } else {
       setSearchParams({});
     }
-  }, [debouncedSearchQuery, setSearchParams]);
+  }, [debouncedSearchQuery, setSearchParams, query]);
 
   const table = useReactTable({
     data,
@@ -95,7 +94,7 @@ export function DataTable<TData>({
     onRowSelectionChange: setRowSelection,
     initialState: {
       pagination: {
-        pageSize: 5,
+        pageSize: 10,
       },
     },
     state: {
@@ -189,6 +188,7 @@ export function DataTable<TData>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
+                  className="h-12"
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
@@ -324,7 +324,7 @@ export function DataTable<TData>({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {[5, 10, 15, 20, 25, 30].map((size) => (
+                {[5, 10, 15, 20].map((size) => (
                   <DropdownMenuItem
                     key={size}
                     onClick={() => table.setPageSize(size)}
