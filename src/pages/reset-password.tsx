@@ -1,6 +1,5 @@
 import { ResetPasswordForm } from "@/components/forms/reset-password-form"
-import { ArrowRight, GalleryVerticalEnd } from "lucide-react"
-import { Link } from "react-router-dom"
+import { GalleryVerticalEnd } from "lucide-react"
 
 export function ResetPassword() {
   return (
